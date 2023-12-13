@@ -1,40 +1,40 @@
 package com.googlecode.aviator.runtime.type.seq;
 
 import java.util.Iterator;
+
 import com.googlecode.aviator.runtime.type.Sequence;
 
 /**
  * Impl {@link Object#toString()} for sub-classes sequence.
  *
- * @author dennis(killme2008@gmail.com)
- *
  * @param <T>
+ * @author dennis(killme2008 @ gmail.com)
  */
 public abstract class AbstractSequence<T> implements Sequence<T> {
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder(super.toString());
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(super.toString());
 
-    sb.append("[");
-    boolean wasFirst = true;
+        sb.append("[");
+        boolean wasFirst = true;
 
-    Iterator<T> it = iterator();
-    while (it.hasNext()) {
-      T e = it.next();
+        Iterator<T> it = iterator();
+        while (it.hasNext()) {
+            T e = it.next();
 
-      if (wasFirst) {
-        sb.append(e);
-        wasFirst = false;
-      } else {
-        sb.append(", ").append(e);
-      }
+            if (wasFirst) {
+                sb.append(e);
+                wasFirst = false;
+            } else {
+                sb.append(", ").append(e);
+            }
+        }
+        sb.append("]");
+
+        return sb.toString();
+
     }
-    sb.append("]");
-
-    return sb.toString();
-
-  }
 
 
 }

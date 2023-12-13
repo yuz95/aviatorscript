@@ -8,15 +8,15 @@ import com.googlecode.aviator.EvalMode;
 
 @ThreadSafe
 public class OperatorFunctionTestWithInterpreter extends OperatorFunctionTest {
-  @Override
-  @Before
-  public void setup() {
-    this.instance = AviatorEvaluator.newInstance(EvalMode.INTERPRETER);
-  }
+    @Override
+    @Before
+    public void setup() {
+        this.instance = AviatorEvaluator.newInstance(EvalMode.INTERPRETER);
+    }
 
-  @Override
-  @After
-  public void tearDown() {
-    this.instance.getOpsMap().clear();
-  }
+    @Override
+    @After
+    public void tearDown() {
+        this.instance.getOpsMap().clear();
+    }
 }

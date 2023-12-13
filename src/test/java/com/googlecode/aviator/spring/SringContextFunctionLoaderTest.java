@@ -1,6 +1,7 @@
 package com.googlecode.aviator.spring;
 
 import static com.googlecode.aviator.TestUtils.assertEquals;
+
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,23 +11,23 @@ import com.googlecode.aviator.AviatorEvaluator;
 
 public class SringContextFunctionLoaderTest {
 
-  private SringContextFunctionLoader loader;
+    private SringContextFunctionLoader loader;
 
-  @Before
-  public void setUp() {
-    ApplicationContext ctx = new ClassPathXmlApplicationContext("context.xml");
-    loader = new SringContextFunctionLoader(ctx);
-    AviatorEvaluator.addFunctionLoader(loader);
-  }
+    @Before
+    public void setUp() {
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("context.xml");
+        loader = new SringContextFunctionLoader(ctx);
+        AviatorEvaluator.addFunctionLoader(loader);
+    }
 
-  @Test
-  public void testAdd() {
-    assertEquals(100.0, AviatorEvaluator.exec("springAdd(x,y)", 1, 99));
-  }
+    @Test
+    public void testAdd() {
+        assertEquals(100.0, AviatorEvaluator.exec("springAdd(x,y)", 1, 99));
+    }
 
-  @AfterClass
-  public static void tearDown() {
-    AviatorEvaluator.addFunctionLoader(null);
-  }
+    @AfterClass
+    public static void tearDown() {
+        AviatorEvaluator.addFunctionLoader(null);
+    }
 
 }

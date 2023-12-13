@@ -5,21 +5,24 @@ import com.googlecode.aviator.code.interpreter.InterpretContext;
 
 public class ClearIR implements IR {
 
-  private static final long serialVersionUID = -486328244006736142L;
+    private static final long serialVersionUID = -486328244006736142L;
 
-  private ClearIR() {};
+    private ClearIR() {
+    }
 
-  public static final ClearIR INSTANCE = new ClearIR();
+    ;
 
-  @Override
-  public void eval(final InterpretContext context) {
-    context.clearStack();
-    context.dispatch();
-  }
+    public static final ClearIR INSTANCE = new ClearIR();
 
-  @Override
-  public String toString() {
-    return "clear";
-  }
+    @Override
+    public void eval(final InterpretContext context) {
+        context.clearStack();
+        context.dispatch();
+    }
+
+    @Override
+    public String toString() {
+        return "clear";
+    }
 
 }

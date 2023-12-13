@@ -1,24 +1,25 @@
 package com.googlecode.aviator.code;
 
-import java.util.Map;
-import java.util.Set;
 import com.googlecode.aviator.lexer.token.Token;
 import com.googlecode.aviator.parser.AviatorClassLoader;
 import com.googlecode.aviator.parser.VariableMeta;
 import com.googlecode.aviator.runtime.LambdaFunctionBootstrap;
 
+import java.util.Map;
+import java.util.Set;
+
 public interface EvalCodeGenerator extends CodeGenerator {
-  void start();
+    void start();
 
-  void initVariables(final Map<String, VariableMeta/* counter */> vars);
+    void initVariables(final Map<String, VariableMeta/* counter */> vars);
 
-  void initConstants(final Set<Token<?>> constants);
+    void initConstants(final Set<Token<?>> constants);
 
-  void initMethods(final Map<String, Integer/* counter */> methods);
+    void initMethods(final Map<String, Integer/* counter */> methods);
 
-  void setLambdaBootstraps(final Map<String, LambdaFunctionBootstrap> lambdaBootstraps);
+    void setLambdaBootstraps(final Map<String, LambdaFunctionBootstrap> lambdaBootstraps);
 
-  AviatorClassLoader getClassLoader();
+    AviatorClassLoader getClassLoader();
 
-  void genNewLambdaCode(final LambdaFunctionBootstrap bootstrap);
+    void genNewLambdaCode(final LambdaFunctionBootstrap bootstrap);
 }

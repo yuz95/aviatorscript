@@ -6,14 +6,14 @@ import com.googlecode.aviator.lexer.SymbolTable;
 
 public interface Parser {
 
-  SymbolTable getSymbolTable();
+    SymbolTable getSymbolTable();
 
-  CodeGenerator getCodeGenerator();
+    CodeGenerator getCodeGenerator();
 
-  void setCodeGenerator(CodeGenerator codeGenerator);
+    void setCodeGenerator(CodeGenerator codeGenerator);
 
-  ScopeInfo enterScope(boolean inForLoop);
+    ScopeInfo enterScope(boolean inForLoop);
 
-  void restoreScope(ScopeInfo info);
+    void restoreScope(ScopeInfo info);
 
 }

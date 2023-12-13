@@ -6,9 +6,9 @@ import com.googlecode.aviator.EvalMode;
 
 public class FunctionTestWithInterpreter extends FunctionTest {
 
-  @Override
-  @Before
-  public void setup() {
-    this.instance = AviatorEvaluator.newInstance(EvalMode.INTERPRETER);
-  }
+    @Override
+    @Before
+    public void setup() {
+        this.instance = AviatorEvaluator.newInstance(EvalMode.INTERPRETER);
+    }
 }

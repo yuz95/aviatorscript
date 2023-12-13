@@ -9,14 +9,14 @@ import com.googlecode.aviator.runtime.JavaMethodReflectionFunctionMissing;
 
 public class TestScriptsWithIntepreterSerialize extends TestScripts {
 
-  @Override
-  @Before
-  public void setup() throws Exception {
-    this.instance = AviatorEvaluator.newInstance(EvalMode.INTERPRETER);
-    this.instance.setOption(Options.SERIALIZABLE, true);
-    this.instance.addStaticFunctions("j", TestUtils.class);
-    this.instance.setFunctionMissing(JavaMethodReflectionFunctionMissing.getInstance());
-    this.testSerialize = true;
-  }
+    @Override
+    @Before
+    public void setup() throws Exception {
+        this.instance = AviatorEvaluator.newInstance(EvalMode.INTERPRETER);
+        this.instance.setOption(Options.SERIALIZABLE, true);
+        this.instance.addStaticFunctions("j", TestUtils.class);
+        this.instance.setFunctionMissing(JavaMethodReflectionFunctionMissing.getInstance());
+        this.testSerialize = true;
+    }
 
 }

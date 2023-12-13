@@ -5,9 +5,8 @@ import java.io.Serializable;
 /**
  * IR interface
  *
- * @author dennis(killme2008@gmail.com)
- *
+ * @author dennis(killme2008 @ gmail.com)
  */
 public interface IR extends Serializable {
-  void eval(InterpretContext context);
+    void eval(InterpretContext context);
 }

@@ -1,17 +1,16 @@
 /**
  * Copyright (C) 2010 dennis zhuang (killme2008@gmail.com)
- *
+ * <p>
  * This library is free software; you can redistribute it and/or modify it under the terms of the
  * GNU Lesser General Public License as published by the Free Software Foundation; either version
  * 2.1 of the License, or (at your option) any later version.
- *
+ * <p>
  * This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU Lesser General Public License along with this program;
  * if not, write to the Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
- *
  **/
 package com.googlecode.aviator;
 
@@ -28,65 +27,65 @@ import java.util.Map;
  */
 public interface Expression extends Serializable {
 
-  /**
-   * Execute expression with environment
-   *
-   * @param env Binding variable environment
-   * @return
-   */
-  Object execute(Map<String, Object> env);
+    /**
+     * Execute expression with environment
+     *
+     * @param env Binding variable environment
+     * @return
+     */
+    Object execute(Map<String, Object> env);
 
 
-  /**
-   * Execute expression with empty environment
-   *
-   * @return
-   */
-  Object execute();
+    /**
+     * Execute expression with empty environment
+     *
+     * @return
+     */
+    Object execute();
 
-  /**
-   * Returns the source file name.
-   *
-   * @since 5.2.3
-   * @return the source file name
-   */
-  public String getSourceFile();
-
-
-  /**
-   * Returns this expression's all uninitialized global variable names in order when using
-   * AviatorEvaluator.EVAL mode,else returns empty set
-   *
-   * @see com.googlecode.aviator.AviatorEvaluator#EVAL
-   * @return
-   */
-  List<String> getVariableNames();
+    /**
+     * Returns the source file name.
+     *
+     * @since 5.2.3
+     * @return the source file name
+     */
+    public String getSourceFile();
 
 
-  /**
-   * Returns this expression's all uninitialized global variable full names(contains dot) in order
-   * when using AviatorEvaluator.EVAL mode,else returns empty set
-   *
-   * @return
-   */
-  List<String> getVariableFullNames();
+    /**
+     * Returns this expression's all uninitialized global variable names in order when using
+     * AviatorEvaluator.EVAL mode,else returns empty set
+     *
+     * @see com.googlecode.aviator.AviatorEvaluator#EVAL
+     * @return
+     */
+    List<String> getVariableNames();
 
-  /**
-   * Created a faster env map(compare variable names by reference).The arguments should be a
-   * sequence of pair <String, Object>.
-   *
-   * @param args
-   * @return an env map
-   */
-  Map<String, Object> newEnv(final Object... args);
 
-  /**
-   * Adds the specified symbol to the symbol table and returns a reference to the unique symbol. If
-   * the symbol already exists, the previous symbol reference is returned instead, in order
-   * guarantee that symbol references remain unique.
-   *
-   * @param name The symbol name.
-   */
-  String addSymbol(String name);
+    /**
+     * Returns this expression's all uninitialized global variable full names(contains dot) in order
+     * when using AviatorEvaluator.EVAL mode,else returns empty set
+     *
+     * @return
+     */
+    List<String> getVariableFullNames();
+
+    /**
+     * Created a faster env map(compare variable names by reference).The arguments should be a
+     * sequence of pair <String, Object>.
+     *
+     * @param args
+     * @return an env map
+     */
+    Map<String, Object> newEnv(final Object... args);
+
+    /**
+     * Adds the specified symbol to the symbol table and returns a reference to the unique symbol. If
+     * the symbol already exists, the previous symbol reference is returned instead, in order
+     * guarantee that symbol references remain unique.
+     *
+     * @param name The symbol name.
+     */
+    String addSymbol(String name);
 
 }
